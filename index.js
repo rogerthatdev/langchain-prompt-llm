@@ -4,12 +4,12 @@ import { PromptTemplate } from "@langchain/core/prompts";
 const model = new ChatOpenAI({});
 
 const promptTemplate = PromptTemplate.fromTemplate(
-  "Tell me a joke about {topic}"
+  "Tell me a recipe that uses {ingredient}"
 );
 
 const chain = promptTemplate.pipe(model);
 
-const result = await chain.invoke({ topic: "bears" });
+const result = await chain.invoke({ ingredient: "chicken, red pepper" });
 
 console.log(result);
 
