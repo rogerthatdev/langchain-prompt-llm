@@ -6,7 +6,7 @@ const prompt = PromptTemplate.fromTemplate(`Give me a list of facts about {subje
 
 const model = new ChatOpenAI({});
 // use bind() to use a stop sequence
-const chain = prompt.pipe(model.bind({ stop: ["\n4."] }));
+const chain = prompt.pipe(model.bind({ stop: ["\n4. "] }));
 
 const result = await chain.invoke({ subject: "capybaras" });
 
