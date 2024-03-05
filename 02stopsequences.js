@@ -1,6 +1,6 @@
 // Challenge: use stop sequence to make response only 3 items long
-import { PromptTemplate } from "langchain/prompts";
-import { ChatOpenAI } from "langchain/chat_models/openai";
+import { ChatOpenAI } from "@langchain/openai";
+import { PromptTemplate } from "@langchain/core/prompts";
 
 const prompt = PromptTemplate.fromTemplate(`Give me a list of facts about {subject}`);
 
