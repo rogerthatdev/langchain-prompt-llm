@@ -5,8 +5,8 @@ import { PromptTemplate } from "@langchain/core/prompts";
 const prompt = PromptTemplate.fromTemplate(`Give me a list of facts about {subject}`);
 
 const model = new ChatOpenAI({});
-
-const chain = prompt.pipe(model);
+// use bind() to use a stop sequence
+const chain = prompt.pipe(model.bind({ stop: ["\n4."] }));
 
 const result = await chain.invoke({ subject: "capybaras" });
 
